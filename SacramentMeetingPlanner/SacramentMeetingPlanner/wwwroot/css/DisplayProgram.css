@@ -1,0 +1,40 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.sacrament-program {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Cinzel', serif;
+    background-color: #fffeff;
+}
+
+/*
+dark blue #003057
+light blue #3e6380
+white fffeff
+
+*/
+
+.jumbotron {
+    background-color: #003057;
+    color: #fffeff;
+}
+
+.row {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: .25rem .25rem;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px; /* top right bottom left */
+    border-color: gray;
+}
+
+.remove-line {
+    border: none;
+}
+
+.col-sm {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px !important;
+}
+
+

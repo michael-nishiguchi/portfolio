@@ -1,0 +1,164 @@
+﻿@page
+@using System.Linq
+@using SacramentMeetingPlanner.Models
+@using Program = SacramentMeetingPlanner.Program
+@model SacramentMeetingPlanner.Pages.Program.EditModel
+
+@{
+    ViewData["Title"] = "Edit Program";
+    var conductingLeader = Model.Program.Participants.FirstOrDefault(x => x.ParticipantRole == ParticipantRoles.ConductingLeader.ToString());
+    var programId = Model.Program.ProgramID;
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/CreateEditDelete.css" />
+</head>
+
+<h1>Edit Program</h1>
+
+<h4>Program</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Program.ProgramID" value="@programId" type="hidden" />
+            <div class="form-group">
+                <label asp-for="Program.DateOfMeeting" class="control-label"></label>
+                <input asp-for="Program.DateOfMeeting" class="form-control" />
+                <span asp-validation-for="Program.DateOfMeeting" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="Program.Participants[0].ProgramID" value="@programId" type="hidden" />
+                <input asp-for="Program.Participants[0].ParticipantID" value="@Model.Program.Participants[0].ParticipantID" type="hidden" />
+                <input asp-for="Program.Participants[0].ParticipantRole" value="@ParticipantRoles.PresidingLeader.ToString()" type="hidden" />
+                <label class="control-label">Presiding</label>
+                <select asp-for="Program.Participants[0].ParticipantTitle" class="form-control">
+                    <option disabled>Title</option>
+                    <option value="Bishop">Bishop</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Elder">Elder</option>
+                    <option value="Sister">Sister</option>
+                    <option value="President">President</option>
+                    <option value="Counselor">Counselor</option>
+                </select>
+                <input asp-for="Program.Participants[0].FullNameOfParticipant" class="form-control" placeholder="Name" />
+                <span asp-validation-for="Program.Participants[0]" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="Program.Participants[1].ProgramID" value="@programId" type="hidden" />
+                <input asp-for="Program.Participants[1].ParticipantID" value="@Model.Program.Participants[1].ParticipantID" type="hidden" />
+                <input asp-for="Program.Participants[1].ParticipantRole" value="@ParticipantRoles.ConductingLeader.ToString()" type="hidden" />
+                <label class="control-label">Conducting</label>
+                <select asp-for="Program.Participants[1].ParticipantTitle" class="form-control">
+                    <option disabled>Title</option>
+                    <option value="Bishop">Bishop</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Elder">Elder</option>
+                    <option value="Sister">Sister</option>
+                    <option value="President">President</option>
+                    <option value="Counselor">Counselor</option>
+                </select>
+                <input asp-for="Program.Participants[1].FullNameOfParticipant" class="form-control" placeholder="Name" />
+                <span asp-validation-for="Program.Participants[1]" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Program.OpeningSong" class="control-label"></label>
+                <input asp-for="Program.OpeningSong" class="form-control" />
+                <span asp-validation-for="Program.OpeningSong" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="Program.Participants[2].ProgramID" value="@programId" type="hidden" />
+                <input asp-for="Program.Participants[2].ParticipantID" value="@Model.Program.Participants[2].ParticipantID" type="hidden" />
+                <input asp-for="Program.Participants[2].ParticipantRole" value="@ParticipantRoles.OpeningPrayer.ToString()" type="hidden" />
+                <label class="control-label">Opening Prayer</label>
+                <select asp-for="Program.Participants[2].ParticipantTitle" class="form-control">
+                    <option disabled>Title</option>
+                    <option value="Bishop">Bishop</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Elder">Elder</option>
+                    <option value="Sister">Sister</option>
+                    <option value="President">President</option>
+                    <option value="Counselor">Counselor</option>
+                </select>
+                <input asp-for="Program.Participants[2].FullNameOfParticipant" class="form-control" placeholder="Name" />
+                <span asp-validation-for="Program.Participants[2]" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Program.SacramentHymn" class="control-label"></label>
+                <input asp-for="Program.SacramentHymn" class="form-control" />
+                <span asp-validation-for="Program.SacramentHymn" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Program.ClosingSong" class="control-label"></label>
+                <input asp-for="Program.ClosingSong" class="form-control" />
+                <span asp-validation-for="Program.ClosingSong" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="Program.Participants[3].ProgramID" value="@programId" type="hidden" />
+                <input asp-for="Program.Participants[3].ParticipantID" value="@Model.Program.Participants[3].ParticipantID" type="hidden" />
+                <input asp-for="Program.Participants[3].ParticipantRole" value="@ParticipantRoles.ClosingPrayer.ToString()" type="hidden" />
+                <label class="control-label">Closing Prayer</label>
+                <select asp-for="Program.Participants[3].ParticipantTitle" class="form-control">
+                    <option disabled>Title</option>
+                    <option value="Bishop">Bishop</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Elder">Elder</option>
+                    <option value="Sister">Sister</option>
+                    <option value="President">President</option>
+                    <option value="Counselor">Counselor</option>
+                </select>
+                <input asp-for="Program.Participants[3].FullNameOfParticipant" class="form-control" />
+                <span asp-validation-for="Program.Participants[3]" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label>Speakers</label>
+                @for (int i = 4; i < Model.Program.Participants.Where(x => x.ParticipantRole == ParticipantRoles.Speaker.ToString()).ToList().Count + 4; i++)
+                {
+                    <input asp-for="@i" type="hidden" />
+                    <input asp-for="Program.Participants[i].ProgramID" value="@programId" type="hidden" />
+                    <input asp-for="Program.Participants[i].ParticipantID" value="@Model.Program.Participants[i].ParticipantID" type="hidden" /> <input asp-for="Program.Participants[i].ParticipantRole" value="@ParticipantRoles.Speaker.ToString()" type="hidden" />
+                    <div class="form-group">
+                        <select asp-for="@Model.Program.Participants[i].ParticipantTitle" class="form-control">
+                            <option disabled>Title</option>
+                            <option value="Bishop">Bishop</option>
+                            <option value="Brother">Brother</option>
+                            <option value="Elder">Elder</option>
+                            <option value="Sister">Sister</option>
+                            <option value="President">President</option>
+                            <option value="Counselor">Counselor</option>
+                        </select>
+                        <input asp-for="Program.Participants[i].ParticipantTitle" value="" type="hidden" />
+                        <input type="text" class="form-control" asp-for="@Model.Program.Participants[i].FullNameOfParticipant" placeholder="Name">
+                        <input type="text" class="form-control" asp-for="@Model.Program.Participants[i].TalkSubject" placeholder="Name">
+                    </div>
+
+                    <button type="submit" asp-page-handler="removeParticipant" asp-route-id="@i" asp-route-index="@i">Remove Speaker</button>
+                    <br />
+                    <br />
+                }
+                <button type="submit" asp-page-handler="addParticipant">Add Speaker</button>
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Update Program" asp-page-handler="saveprogram" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to Programs</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

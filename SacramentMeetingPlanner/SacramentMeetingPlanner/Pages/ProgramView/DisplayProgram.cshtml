@@ -1,0 +1,96 @@
+﻿@page
+@using SacramentMeetingPlanner.Models
+@using Program = SacramentMeetingPlanner.Program
+@model SacramentMeetingPlanner.Pages.ProgramView.DisplayProgramModel
+@{
+    ViewData["Title"] = "Display Program";
+    var presiding = Model.Program.Participants.FirstOrDefault(x => x.ParticipantRole == ParticipantRoles.PresidingLeader.ToString());
+    var conducting = Model.Program.Participants.FirstOrDefault(x => x.ParticipantRole == ParticipantRoles.ConductingLeader.ToString());
+    var openingPrayer = Model.Program.Participants.FirstOrDefault(x => x.ParticipantRole == ParticipantRoles.OpeningPrayer.ToString());
+    var speakers = Model.Program.Participants.Where(x => x.ParticipantRole == ParticipantRoles.Speaker.ToString()).ToList();
+    var closingPrayer = Model.Program.Participants.FirstOrDefault(x => x.ParticipantRole == ParticipantRoles.ClosingPrayer.ToString());
+}
+<head>
+    <link rel="stylesheet" href="~/css/DisplayProgram.css" />
+</head>
+<div class="sacrament-program">
+    <div class="jumbotron">
+        <h1>Sacrament Program</h1>
+        <h5 class="font-italic">@Model.Program.DateOfMeeting.ToShortDateString()</h5>
+    </div>
+
+    <div class="row line">
+        <div class="participant-role col-sm">@Html.DisplayFor(Model => presiding.ParticipantRole)</div>
+        <div class="participant-title col-sm">
+            @Html.DisplayFor(Model => presiding.ParticipantTitle)
+            <span class="participant-name">@Html.DisplayFor(Model => presiding.FullNameOfParticipant)</span>
+        </div>
+    </div>
+
+    <div class="row line">
+        <div class="participant-role col-sm">@Html.DisplayFor(Model => conducting.ParticipantRole)</div>
+        <div class="participant-title col-sm">
+            @Html.DisplayFor(Model => conducting.ParticipantTitle)
+            <span class="participant-name">@Html.DisplayFor(Model => conducting.FullNameOfParticipant)</span>
+        </div>
+    </div>
+
+    <div class="row line">
+        <div class="col-sm">Opening Song</div>
+        <div class="col-sm">@Model.Program.OpeningSong</div>
+    </div>
+
+    <div class="row line">
+        <div class="participant-role col-sm">@Html.DisplayFor(Model => openingPrayer.ParticipantRole)</div>
+        <div class="participant-title col-sm">
+            @Html.DisplayFor(Model => openingPrayer.ParticipantTitle)
+            <span class="participant-name">@Html.DisplayFor(Model => openingPrayer.FullNameOfParticipant)</span>
+        </div>
+    </div>
+
+    <div class="row line">
+        <div class="col-sm">Ward Business</div>
+    </div>
+
+    <div class="row line">
+        <div class="col-sm">Sacrament Song</div>
+        <span class="col-sm">@Model.Program.SacramentHymn</span>
+    </div>
+
+    <div class="row line">
+        <div class="col-sm">Administration of the Sacrament.</div>
+    </div>
+
+    @foreach (var speaker in speakers)
+    {
+        <div class="row line">
+            <div class="participant-role col-sm">@Html.DisplayFor(Model => speaker.ParticipantRole)</div>
+            <div class="participant-title col-sm">
+                @Html.DisplayFor(Model => speaker.ParticipantTitle)
+                <span class="participant-name">@Html.DisplayFor(Model => speaker.FullNameOfParticipant)</span>
+            </div>
+        </div>
+        <div class="row remove-line">
+            <div class="col-sm">Topic</div>
+            <div class="col-sm">@Html.DisplayFor(Model => speaker.TalkSubject)</div>
+        </div>
+
+    }
+
+    <div class="row line">
+        <div class="col-sm">Closing Song</div>
+        <div class="col-sm">@Model.Program.ClosingSong</div>
+    </div>
+
+    <div class="row line">
+        <div class="participant-role col-sm">@Html.DisplayFor(Model => closingPrayer.ParticipantRole)</div>
+        <div class="participant-title col-sm">
+            @Html.DisplayFor(Model => closingPrayer.ParticipantTitle)
+            <span class="participant-name">@Html.DisplayFor(Model => closingPrayer.FullNameOfParticipant)</span>
+        </div>
+    </div>
+    <br />
+    <br />
+</div>
+<br />
+<a asp-page="./Index">Back to Programs</a>
