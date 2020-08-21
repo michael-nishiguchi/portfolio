@@ -9,6 +9,8 @@ const path = require('path');
 //const port = 3000;
 const bcrypt = require('bcryptjs');
 
+console.log(__dirname);
+
 var cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
@@ -21,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set('view engine', 'pug');
 
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 4000);
 app.listen(app.get('port'), function() {
 	console.log('Node server is running on port ' + app.get('port'));
 });
