@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1#welcome hello.
+
+  h3 i'm michael.
+  p see the work that i've done
+  img#logo(src='images/logo.svg' alt='logo')
+
+  .theme-switch-wrapper
+  label.theme-switch(for='checkbox')
+    input#checkbox(type='checkbox')
+    .slider.round
+    
+  a#arrow(href='#portfolio')
+    i.fas.fa-arrow-down 
+
+  #portfolio
+    p this is my portfolio
+
+  #contact
+    p this is the contact
+
+

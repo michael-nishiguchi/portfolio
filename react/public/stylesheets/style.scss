@@ -1,0 +1,132 @@
+//colors
+$primary-color: #ee9b02;
+$secondary-color: #0256ee;
+$light-surface: white;
+$dark-surface: #121212;
+$hover-opacity: 30%;
+//dark mode color
+
+[data-theme="dark"] {
+	$primary-color: gray;
+}
+//animation
+$default-speed: .3s;
+
+//fonts
+@import 'https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap';
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'lato', sans-serif;
+}
+body {
+	font-family: 'Roboto';
+	background-color: $light-surface;
+}
+
+//spacing
+$menu-padding: 8px;
+
+//Navigation
+#hamburger {
+	color: black;
+	font-size: 2em;
+	position: absolute;
+	left: 5%;
+	&:hover {
+		opacity: $hover-opacity;
+		transition: $default-speed;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: $primary-color;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+
+	i:hover,
+	a:hover,
+	.closebtn:hover {
+		opacity: $hover-opacity;
+		transition: $default-speed;
+	}
+
+	i {
+		color: white;
+		padding: $menu-padding;
+		font-size: 3em;
+		cursor: pointer;
+	}
+
+	.closebtn {
+		font-size: 4em;
+	}
+
+	a,
+	input {
+		padding: $menu-padding;
+		text-decoration: none;
+		font-size: 3em;
+		font-family: 'lato', sans-serif;
+		color: white;
+		display: block;
+		transition: 0.3s;
+	}
+}
+
+i.fa-arrow-down {
+	margin-top: 200px;
+	color: black;
+	font-size: 10em;
+	display: block;
+	&:hover {
+		opacity: $hover-opacity;
+		transition: $default-speed;
+	}
+}
+
+#content {
+	position: relative;
+	z-index: 2;
+	padding: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#logo {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+#welcome {
+	font-size: 6em;
+}
+
+#arrow {
+	text-decoration: none;
+}
+
+#portfolio p {
+	margin-top: 1000px;
+}
+
+#contact p {
+	margin-top: 1000px;
+}
+
+body.darkMode {
+	filter: invert(1);
+}
