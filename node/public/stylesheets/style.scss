@@ -1,29 +1,45 @@
 //colors
+html[data-theme="light"] {
+	scroll-behavior: smooth;
+	--text-color: black;
+	--surface: #eee;
+	--nav-surface: #fff;
+	--heading-color: #0256ee;
+}
+
 $primary-color: #ee9b02;
 $secondary-color: #0256ee;
-$light-surface: white;
+$surface: #eee;
+$menu-color: #fff;
 $dark-surface: #121212;
+$shadow: #424242;
 $hover-opacity: 30%;
+$light-font-color: blue;
 //dark mode color
 
-[data-theme="dark"] {
-	$primary-color: gray;
+html[data-theme="dark"] {
+	--text-color: white;
+	--surface: #121212;
+	--nav-surface: #434343;
+	--heading-color: #ee9b02;
 }
 //animation
 $default-speed: .3s;
 
 //fonts
-@import 'https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300&display=swap';
 h1,
 h2,
 h3,
 h4,
 h5 {
-	font-family: 'lato', sans-serif;
+	font-family: 'Lato', sans-serif;
+	color: var(--text-color);
 }
 body {
 	font-family: 'Roboto';
-	background-color: $light-surface;
+	color: var(--text-color);
+	background-color: var(--surface);
 }
 
 //spacing
@@ -31,7 +47,7 @@ $menu-padding: 8px;
 
 //Navigation
 #hamburger {
-	color: black;
+	color: var(--text-color);
 	font-size: 2em;
 	position: absolute;
 	left: 5%;
@@ -41,10 +57,6 @@ $menu-padding: 8px;
 	}
 }
 
-html {
-	scroll-behavior: smooth;
-}
-
 .sidenav {
 	height: 100%;
 	width: 0;
@@ -52,10 +64,10 @@ html {
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: $primary-color;
 	overflow-x: hidden;
-	transition: 0.5s;
+	transition: .3s;
 	padding-top: 60px;
+	background-color: var(--nav-surface);
 
 	i:hover,
 	a:hover,
@@ -65,7 +77,6 @@ html {
 	}
 
 	i {
-		color: white;
 		padding: $menu-padding;
 		font-size: 3em;
 		cursor: pointer;
@@ -81,9 +92,9 @@ html {
 		text-decoration: none;
 		font-size: 3em;
 		font-family: 'lato', sans-serif;
-		color: white;
 		display: block;
 		transition: 0.3s;
+		color: var(--text-color);
 	}
 }
 
@@ -115,18 +126,85 @@ i.fa-arrow-down {
 	font-size: 6em;
 }
 
-#arrow {
-	text-decoration: none;
+#portfolio {
+	.portfolio-item {
+		background-color: var(--nav-surface);
+		padding: 10px;
+		border-radius: 10px;
+		margin: 20px;
+		i {
+			padding: 5px;
+			//color: $secondary-color;
+		}
+		h1 a {
+			color: var(--heading-color);
+			text-decoration: none;
+			&:hover {
+				opacity: $hover-opacity;
+			}
+		}
+	}
 }
 
-#portfolio p {
-	margin-top: 1000px;
+.contact {
+	background-color: var(--nav-surface);
+	padding: 10px;
+	border-radius: 10px;
+	input,
+	textarea {
+		width: 100%;
+	}
 }
 
-#contact p {
-	margin-top: 1000px;
+//toggle button
+input[type=checkbox] {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 52px;
+	height: 27px;
+	background: $primary-color;
+	float: right;
+	border-radius: 100px;
+	position: relative;
+	margin-right: 20px;
 }
 
-body.darkMode {
-	filter: invert(1);
+label:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	background: white;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: $secondary-color;
+	transition: .3s;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 45px;
+}
+//end toggle button
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+	transition: all 750ms !important;
+	transition-delay: 0 !important;
 }

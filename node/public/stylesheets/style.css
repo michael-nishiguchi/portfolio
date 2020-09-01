@@ -1,19 +1,36 @@
-@import 'https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300&display=swap';
+html[data-theme=light] {
+  scroll-behavior: smooth;
+  --text-color: black;
+  --surface: #eee;
+  --nav-surface: #fff;
+  --heading-color: #0256ee;
+}
+
+html[data-theme=dark] {
+  --text-color: white;
+  --surface: #121212;
+  --nav-surface: #434343;
+  --heading-color: #ee9b02;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: "lato", sans-serif;
+  font-family: "Lato", sans-serif;
+  color: var(--text-color);
 }
 
 body {
   font-family: "Roboto";
-  background-color: white;
+  color: var(--text-color);
+  background-color: var(--surface);
 }
 
 #hamburger {
-  color: black;
+  color: var(--text-color);
   font-size: 2em;
   position: absolute;
   left: 5%;
@@ -23,10 +40,6 @@ body {
   transition: 0.3s;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .sidenav {
   height: 100%;
   width: 0;
@@ -34,10 +47,10 @@ html {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #ee9b02;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.3s;
   padding-top: 60px;
+  background-color: var(--nav-surface);
 }
 .sidenav i:hover,
 .sidenav a:hover,
@@ -46,7 +59,6 @@ html {
   transition: 0.3s;
 }
 .sidenav i {
-  color: white;
   padding: 8px;
   font-size: 3em;
   cursor: pointer;
@@ -60,9 +72,9 @@ html {
   text-decoration: none;
   font-size: 3em;
   font-family: "lato", sans-serif;
-  color: white;
   display: block;
   transition: 0.3s;
+  color: var(--text-color);
 }
 
 i.fa-arrow-down {
@@ -93,20 +105,83 @@ i.fa-arrow-down:hover {
   font-size: 6em;
 }
 
-#arrow {
+#portfolio .portfolio-item {
+  background-color: var(--nav-surface);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+}
+#portfolio .portfolio-item i {
+  padding: 5px;
+}
+#portfolio .portfolio-item h1 a {
+  color: var(--heading-color);
   text-decoration: none;
 }
-
-#portfolio p {
-  margin-top: 1000px;
+#portfolio .portfolio-item h1 a:hover {
+  opacity: 30%;
 }
 
-#contact p {
-  margin-top: 1000px;
+.contact {
+  background-color: var(--nav-surface);
+  padding: 10px;
+  border-radius: 10px;
+}
+.contact input,
+.contact textarea {
+  width: 100%;
 }
 
-body.darkMode {
-  filter: invert(1);
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: #ee9b02;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+  margin-right: 20px;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: #0256ee;
+  transition: 0.3s;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 45px;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
 }
 
 /*# sourceMappingURL=style.css.map */
