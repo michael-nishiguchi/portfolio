@@ -17,7 +17,7 @@ block content
         a(href='#') Linix/Linode/Rasberry Pi
       p This website and all of the following projects are hosted on a Linode server running Ubuntu. I have also created a backup on a Rasberry Pi.
     .portfolio-item
-      h1cigano
+      h1
         i.fab.fa-node-js
         a(href='http://michael-nishiguchi.codes:4000') Node JS Note Taking App
       p Note Taking App
@@ -25,44 +25,42 @@ block content
       h1
         i.fas.fa-newspaper
         a(href='/nyt/index.html') Somethin&apos; Good
-      p
-        | This was a fun project where I used the New York Times API to retrieve data. The application lets you search for articles and filter articles by topics you don&apos;t want to see.
+      p This was a fun project where I used the New York Times API to retrieve data. The application lets you search for articles and filter articles by topics you don&apos;t want to see.
     .portfolio-item
       h1
         i.fas.fa-gamepad
         a(href='../tic-tac-toe/') Tic-Tac-Toe
-      p
-        | Here&apos;s a tic-tac-toe game that I made with the Twitter Bootstrap framework. It uses a minimax algorithm to make an
-        i unbeatable
-        |  opponent.
+      p Here's a tic-tac-toe game that I made with the Twitter Bootstrap framework. It uses a minimax algorithm to make an
+        i unbeatable opponent.
     .portfolio-item
       h1
         i.fab.fa-adobe
         a(href='#') Adobe CC Projects
-      p
-        | Here is some work I have done in Adobe Illustrator and Photoshop. The first 5 are icons and the last image is an Under Armor ad that I recreated.
-    .grid-1
+      p Here is some work I have done in Adobe Illustrator and Photoshop. The first 5 are icons and the last image is an Under Armor ad that I recreated.
+    .portfolio-item
       figure
         img(src='images/headphones.png' alt='over ear headphones')
-    .grid-1
+    .portfolio-item
       figure
         img(src='images/speaker.png' alt='speaker')
-    .grid-1
+    .portfolio-item
       figure
         img(src='images/microphone.png' alt='stick microphone')
-    .grid-1
+    .portfolio-item
       figure
         img(src='images/old-microphone.png' alt='old school microphone')
-    .grid-1
+    .portfolio-item
       figure
         img(src='images/earbuds.png' alt='earbuds')
-    .grid-1
+    .portfolio-item
       figure
         img(src='images/climber.jpg' alt='woman climbing')
 
-  form(action="sendEmail" class="contact" method="post")
+  form(action="/sendEmail" class="contact" method="post")
     h2 Send me a message
-    input(name="subject" class="emailSubject" type="text" placeholder="subject")
-    textarea(type="text" name="message" rows="5" placeholder="Your message...")
-    button.btn.btn-block(type='submit' class="blueBtn") Save
+    p or shoot me an email at 
+      a(href="mailto: mikenishiguchi@gmail.com") mikenishiguchi@gmail.com
+    input(name="subject" class="emailSubject" type="text" placeholder="subject" required)
+    textarea(type="text" name="message" rows="5" placeholder="Your message..." required)
+    button.btn.btn-block(type='submit' class="blueBtn") Send
 
