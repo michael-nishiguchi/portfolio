@@ -10,6 +10,10 @@ router.post('/sendEmail', function(req, res) {
 	var nodemailer = require('nodemailer');
 	var subject = req.body.subject;
 	var text = req.body.message;
+	if (typeof subject == 'undefined' || typeof text == 'undefined') {
+		console.log('No subject/text for email. Not sent');
+		res.render('index', { title: 'Express' });
+	}
 
 	var transporter = nodemailer.createTransport({
 		service: 'Gmail',

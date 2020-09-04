@@ -1,21 +1,22 @@
 //colors
 html[data-theme="light"] {
-	scroll-behavior: smooth;
 	--text-color: black;
-	--surface: #eee;
+	--surface: #e2e1e0;
 	--nav-surface: #fff;
-	--heading-color: #0256ee;
+
+	--heading-color: black;
 }
 
 $primary-color: #ee9b02;
+$primary-color-hover: #fdc04e;
 $secondary-color: #0256ee;
 $surface: #eee;
 $menu-color: #fff;
 $dark-surface: #121212;
 $shadow: #424242;
 $hover-opacity: 30%;
-$light-font-color: blue;
-//dark mode color
+
+$material-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
 html[data-theme="dark"] {
 	--text-color: white;
@@ -36,10 +37,19 @@ h5 {
 	font-family: 'Lato', sans-serif;
 	color: var(--text-color);
 }
+html {
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+}
 body {
 	font-family: 'Roboto';
 	color: var(--text-color);
 	background-color: var(--surface);
+	position: relative;
+	z-index: 1;
+	padding: 30px;
+	text-align: center;
+	font-weight: bold;
 }
 
 //spacing
@@ -65,9 +75,10 @@ $menu-padding: 8px;
 	top: 0;
 	left: 0;
 	overflow-x: hidden;
-	transition: .3s;
+	transition: $default-speed;
 	padding-top: 60px;
 	background-color: var(--nav-surface);
+	box-shadow: $material-shadow;
 
 	i:hover,
 	a:hover,
@@ -78,7 +89,7 @@ $menu-padding: 8px;
 
 	i {
 		padding: $menu-padding;
-		font-size: 3em;
+		font-size: 3rem;
 		cursor: pointer;
 	}
 
@@ -93,7 +104,7 @@ $menu-padding: 8px;
 		font-size: 3em;
 		font-family: 'Roboto', sans-serif;
 		display: block;
-		transition: 0.3s;
+		transition: $default-speed;
 		color: var(--text-color);
 	}
 }
@@ -109,14 +120,6 @@ i.fa-arrow-down {
 	}
 }
 
-#content {
-	position: relative;
-	z-index: 2;
-	padding: 30px;
-	text-align: center;
-	font-weight: bold;
-}
-
 #logo {
 	max-width: 500px;
 	margin: 0 auto;
@@ -127,39 +130,67 @@ i.fa-arrow-down {
 }
 
 #portfolio {
+	margin-top: 20px;
+
 	.portfolio-item {
 		background-color: var(--nav-surface);
-		padding: 10px;
-		margin: 20px;
-		i {
-			padding: 5px;
-			//color: $secondary-color;
+		box-shadow: $material-shadow;
+		margin-bottom: 30px;
+
+		p {
+			opacity: 82%;
+			padding: 20px;
 		}
-		h1 a {
-			color: var(--heading-color);
+
+		a {
+			font-size: 2em;
+			font-family: 'Lato', sans-serif;
+			display: block;
+			color: var(--text-color);
 			text-decoration: none;
+
 			&:hover {
 				opacity: $hover-opacity;
+				transition: $default-speed;
 			}
+		}
+		i {
+			font-size: 2em;
+			padding-top: 20px;
 		}
 	}
 }
 
 .contact {
 	background-color: var(--nav-surface);
-	padding: 10px;
+	padding: 40px;
+	box-shadow: $material-shadow;
 	input,
 	textarea {
-		box-sizing: border-box;
 		font-family: 'Lato', sans-serif;
 		font-size: 1.5em;
 		width: 100%;
 		padding: 10px;
 		margin-bottom: 10px;
+		background-color: var(--surface);
+		border: none;
+		box-shadow: $material-shadow;
+		color: var(--text-color);
 	}
 	button {
 		padding: 10px;
 		font-family: 'Roboto', sans-serif;
+		font-size: 1.5em;
+		color: var(--text-color);
+		background-color: $primary-color;
+		border: none;
+		box-shadow: $material-shadow;
+		width: 50%;
+		&:hover {
+			cursor: pointer;
+			background-color: $primary-color-hover;
+			transition: $default-speed;
+		}
 	}
 }
 
@@ -178,7 +209,7 @@ label {
 	float: right;
 	border-radius: 100px;
 	position: relative;
-	margin-right: 20px;
+	margin-right: 42%;
 }
 
 label:after {
@@ -190,12 +221,12 @@ label:after {
 	height: 20px;
 	background: white;
 	border-radius: 90px;
-	transition: 0.3s;
+	transition: $default-speed;
 }
 
 input:checked + label {
 	background: $secondary-color;
-	transition: .3s;
+	transition: $default-speed;
 }
 
 input:checked + label:after {
@@ -218,6 +249,18 @@ html.transition *:after {
 
 @media (min-width: 1200px) {
 	body {
-		background-color: pink;
+		//background-color: pink;
+	}
+	#main {
+	}
+	.container {
+		width: 800px;
+		margin: 0 auto;
+	}
+	#portfolio {
+		display: grid;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+		grid-template-columns: auto auto;
 	}
 }
