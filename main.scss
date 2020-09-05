@@ -1,0 +1,314 @@
+//colors
+$background: #333;
+$cream: #e8f8f8;
+$teal: #2ec4b6;
+$guchi-orange: #e48400;
+$orange-hover: #e29c3b;
+$body-width: 75%;
+$max-body-width: 900px;
+
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins');
+$header-font: 'Open Sans', sans-serif;
+$header-font-weight: 900;
+$header-font-size: 22px;
+$body-font: 'Poppins', sans-serif;
+$body-font-size: 14px;
+$body-font-weight: 100;
+
+//sizes
+$default-padding: 30px;
+$double-padding: 100px;
+$fig-width: 333px;
+$line-height: 2px;
+
+//media queries
+$mobile-breakpoint: 500px;
+$tablet-breakpoint: 1000px;
+
+// ==== General Elements ====
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background-color: $background;
+	color: $cream;
+	font-family: $body-font;
+	font-weight: $body-font-weight;
+	min-height: 100%;
+}
+
+p {
+	font-size: $body-font-size;
+}
+
+header {
+	border-bottom: $line-height solid $teal;
+}
+
+i {
+	padding-right: 10px;
+}
+
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: $header-font;
+}
+
+//==== Navigation =====
+nav {
+	ul {
+		width: $body-width;
+		max-width: $max-body-width;
+		margin: 0 auto 0 auto;
+		display: flex;
+		justify-content: space-between;
+		padding: 0;
+	}
+	li {
+		list-style-type: none;
+		padding: $default-padding 0 $default-padding 0;
+
+		&.active {
+			border-bottom: $line-height solid $guchi-orange;
+			margin-bottom: -2px;
+		}
+	}
+	a {
+		color: $cream;
+		text-decoration: none;
+		font-family: $header-font;
+		font-weight: $header-font-weight;
+		font-size: $header-font-size;
+
+		&:hover {
+			color: $teal;
+			text-decoration: none;
+		}
+		&:active {
+			color: $cream;
+		}
+	}
+}
+.line {
+	display: none;
+}
+
+main {
+	width: $body-width;
+	max-width: $max-body-width;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: $body-font;
+}
+
+// ==== General links ====
+a {
+	color: $guchi-orange;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+//==== GRID TEMPLATE ====
+.grid-container {
+	display: flex;
+	flex: 1 1 $body-width;
+	flex-flow: row wrap;
+	padding: $default-padding 0 $double-padding 0;
+
+	.grid-1 {
+		flex: 0 0 50%;
+		margin: 0;
+		padding: 0 20px 20px 0;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.portrait {
+		width: 100%;
+		max-width: $fig-width;
+		border: 1px solid $teal;
+		border-radius: 10px;
+	}
+
+	.grid-2 {
+		flex: 0 0 100%;
+	}
+}
+
+//==== ABOUT FORMATTING ====
+figure {
+	margin: 0;
+	background-color: $background;
+	max-width: $fig-width;
+
+	img {
+		border: 1px solid $teal;
+		border-radius: 10px;
+	}
+
+	figcaption p {
+		padding: 5px;
+		text-align: center;
+		vertical-align: middle;
+	}
+}
+
+//==== CONTACT FORM =====
+.contact-form {
+	padding-bottom: 100px;
+	h1 {
+		margin: $default-padding 0 $default-padding 0;
+	}
+	input {
+		//height: 40px;
+		margin-bottom: 20px;
+		&[type=submit] {
+			background-color: $guchi-orange;
+			width: 25%;
+			&:hover {
+				background-color: $orange-hover;
+			}
+			&:active {
+				background-color: $guchi-orange;
+				border: 1px solid gray;
+			}
+		}
+	}
+
+	input,
+	textarea {
+		display: block;
+		font-size: 20px;
+		font-family: $body-font;
+		border-radius: 5px;
+		width: 75%;
+		margin-bottom: 20px;
+		border: 0;
+		padding: 10px;
+	}
+}
+
+footer {
+	padding: 21px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: $teal;
+
+	.foot-nav {
+		ul {
+			width: $body-width;
+			max-width: $max-body-width;
+			display: flex;
+			margin: 0 auto 0 auto;
+			padding: 0;
+			justify-content: space-between;
+		}
+
+		a {
+			color: $cream;
+			text-decoration: none;
+			font-family: $header-font;
+			font-weight: 500;
+			font-size: 14px;
+
+			&:hover {
+				text-decoration: none;
+				color: $background;
+			}
+		}
+
+		li {
+			list-style-type: none;
+		}
+	}
+	p {
+		text-align: center;
+		margin: 3px;
+	}
+}
+
+//==== Mobile ====
+@media only screen and (max-width: $mobile-breakpoint) {
+	//mobile nav
+	.line {
+		width: 30px;
+		height: 2px;
+		margin: 10px 0;
+		background-color: #fff;
+	}
+
+	.mobile-wrapper {
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.mobile {
+		max-width: 300px;
+		width: 100%;
+		height: 500px;
+		background-color: #eee;
+		overflow: hidden;
+		position: relative;
+		display: inline-block;
+	}
+
+	nav {
+		overflow: hidden;
+		background-color: $background;
+		position: relative;
+
+		#myLinks {
+			li a {
+				color: #989aa4;
+				display: block;
+				padding: 15px 20px;
+			}
+		}
+
+		a {
+			font-size: 14px;
+		}
+	}
+	.grid-container {
+		.grid-1 {
+			flex: 0 0 100%;
+		}
+	}
+
+	footer {
+		display: none;
+	}
+
+	.contact-form {
+		input {
+			&[type=submit] {
+				width: 50%;
+			}
+		}
+
+		input,
+		textarea {
+			width: 100%;
+		}
+	}
+}
