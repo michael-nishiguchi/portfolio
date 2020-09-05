@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  h1#welcome hello.
+
+  h3 i'm michael.
+  h3 check out what i've done
+  img#logo(src='images/logo.svg' alt='logo')
+  
+  .container
+    .container-item
+      #portfolio
+        .portfolio-item#linode
+          a
+            i.fab.fa-linux
+            i.fab.fa-ubuntu 
+            i.fab.fa-linode
+            i.fab.fa-raspberry-pi
+          a Linux/Linode/Rasberry Pi
+          p This website and all of the following projects are hosted on a Linode server running Ubuntu. I have also created a backup on a Rasberry Pi.
+        .portfolio-item
+          a(href='http://michael-nishiguchi.codes:4000')
+            i.fab.fa-node-js
+          a(href='http://michael-nishiguchi.codes:4000') Node JS Note Taking App
+          p Note Taking App
+        .portfolio-item
+          a(href='http://michael-nishiguchi.codes/nyt/index.html')
+            i.fas.fa-newspaper 
+          a(href='http://michael-nishiguchi.codes/nyt/index.html') Somethin&apos; Good
+          p This was a fun project where I used the New York Times API to retrieve data. The application lets you search for articles and filter articles by topics you don&apos;t want to see.
+        .portfolio-item
+          a(href='http://michael-nishiguchi.codes/tic-tac-toe/')  
+            i.fas.fa-gamepad
+          a(href='http://michael-nishiguchi.codes/tic-tac-toe/') Tic-Tac-Toe
+          p Here's a tic-tac-toe game that I made with the Twitter Bootstrap framework. It uses a minimax algorithm to make an unbeatable opponent.
+        .portfolio-item
+          a
+            i.fab.fa-adobe
+          a Adobe CC Projects
+          p Here is some work I have done in Adobe Illustrator and Photoshop. The first 5 are icons and the last image is an Under Armor ad that I recreated.
+        .portfolio-item
+          figure
+            img(src='images/headphones.png' alt='over ear headphones')
+        .portfolio-item
+          figure
+            img(src='images/speaker.png' alt='speaker')
+        .portfolio-item
+          figure
+            img(src='images/microphone.png' alt='stick microphone')
+        .portfolio-item
+          figure
+            img(src='images/old-microphone.png' alt='old school microphone')
+        .portfolio-item
+          figure
+            img(src='images/earbuds.png' alt='earbuds')
+        .portfolio-item
+          figure
+            img(src='images/climber.jpg' alt='woman climbing')
+    .container-full
+      #contact
+        form(action="/sendEmail" class="contact" method="post")
+          h2 Send me a message
+          p or shoot me an email at 
+            a(href="mailto: mikenishiguchi@gmail.com") mikenishiguchi@gmail.com
+          input(name="subject" class="emailSubject" type="text" placeholder="subject" required)
+          textarea(type="text" name="message" rows="5" placeholder="Your message..." required)
+          button.btn.btn-block(type='submit' class="blueBtn") Send
+

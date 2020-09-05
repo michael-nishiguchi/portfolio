@@ -1,0 +1,23 @@
+doctype html
+html(lang="en", data-theme="light")
+  head
+    title Michael Nishiguchi
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='icon', type='image/svg', href='/images/logo.svg')
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous")
+    script(src='javascripts/main.js')
+  body#content
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a(href='#') Home
+      a(href='#portfolio' onclick='closeNav()') Portfolio
+      a(href='#contact' onclick='closeNav()') Contact
+      .toggle-container
+        input#switch(type='checkbox' name='theme')
+        label(for='switch') Toggleer
+    span#hamburger(style='cursor:pointer' onclick='openNav()') &#9776
+    #main
+      block content
+

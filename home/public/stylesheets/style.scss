@@ -1,0 +1,266 @@
+//colors
+html[data-theme="light"] {
+	--text-color: black;
+	--surface: #e2e1e0;
+	--nav-surface: #fff;
+
+	--heading-color: black;
+}
+
+$primary-color: #ee9b02;
+$primary-color-hover: #fdc04e;
+$secondary-color: #0256ee;
+$surface: #eee;
+$menu-color: #fff;
+$dark-surface: #121212;
+$shadow: #424242;
+$hover-opacity: 30%;
+
+$material-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+html[data-theme="dark"] {
+	--text-color: white;
+	--surface: #121212;
+	--nav-surface: #434343;
+	--heading-color: #ee9b02;
+}
+//animation
+$default-speed: .3s;
+
+//fonts
+@import 'https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300&display=swap';
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Lato', sans-serif;
+	color: var(--text-color);
+}
+html {
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Roboto';
+	color: var(--text-color);
+	background-color: var(--surface);
+	position: relative;
+	z-index: 1;
+	padding: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+
+//spacing
+$menu-padding: 8px;
+
+//Navigation
+#hamburger {
+	color: var(--text-color);
+	font-size: 2em;
+	position: absolute;
+	left: 5%;
+	&:hover {
+		opacity: $hover-opacity;
+		transition: $default-speed;
+	}
+}
+
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	overflow-x: hidden;
+	transition: $default-speed;
+	padding-top: 60px;
+	background-color: var(--nav-surface);
+	box-shadow: $material-shadow;
+
+	i:hover,
+	a:hover,
+	.closebtn:hover {
+		opacity: $hover-opacity;
+		transition: $default-speed;
+	}
+
+	i {
+		padding: $menu-padding;
+		font-size: 3rem;
+		cursor: pointer;
+	}
+
+	.closebtn {
+		font-size: 4em;
+	}
+
+	a,
+	input {
+		padding: $menu-padding;
+		text-decoration: none;
+		font-size: 3em;
+		font-family: 'Roboto', sans-serif;
+		display: block;
+		transition: $default-speed;
+		color: var(--text-color);
+	}
+}
+
+i.fa-arrow-down {
+	margin-top: 200px;
+	color: black;
+	font-size: 10em;
+	display: block;
+	&:hover {
+		opacity: $hover-opacity;
+		transition: $default-speed;
+	}
+}
+
+#logo {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+#welcome {
+	font-size: 6em;
+}
+
+#portfolio {
+	margin-top: 20px;
+
+	.portfolio-item {
+		background-color: var(--nav-surface);
+		box-shadow: $material-shadow;
+		margin-bottom: 30px;
+
+		p {
+			opacity: 82%;
+			padding: 20px;
+		}
+
+		a {
+			font-size: 2em;
+			font-family: 'Lato', sans-serif;
+			display: block;
+			color: var(--text-color);
+			text-decoration: none;
+
+			&:hover {
+				opacity: $hover-opacity;
+				transition: $default-speed;
+			}
+		}
+		i {
+			font-size: 2em;
+			padding-top: 20px;
+		}
+	}
+}
+
+.contact {
+	background-color: var(--nav-surface);
+	padding: 40px;
+	box-shadow: $material-shadow;
+	input,
+	textarea {
+		font-family: 'Lato', sans-serif;
+		font-size: 1.5em;
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 10px;
+		background-color: var(--surface);
+		border: none;
+		box-shadow: $material-shadow;
+		color: var(--text-color);
+	}
+	button {
+		padding: 10px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 1.5em;
+		color: var(--text-color);
+		background-color: $primary-color;
+		border: none;
+		box-shadow: $material-shadow;
+		width: 50%;
+		&:hover {
+			cursor: pointer;
+			background-color: $primary-color-hover;
+			transition: $default-speed;
+		}
+	}
+}
+
+//toggle button
+input[type=checkbox] {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 52px;
+	height: 27px;
+	background: $primary-color;
+	float: right;
+	border-radius: 100px;
+	position: relative;
+	margin-right: 42%;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	background: white;
+	border-radius: 90px;
+	transition: $default-speed;
+}
+
+input:checked + label {
+	background: $secondary-color;
+	transition: $default-speed;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 45px;
+}
+//end toggle button
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+	transition: all 750ms !important;
+	transition-delay: 0 !important;
+}
+
+@media (min-width: 1200px) {
+	body {
+		//background-color: pink;
+	}
+	#main {
+	}
+	.container {
+		width: 800px;
+		margin: 0 auto;
+	}
+	#portfolio {
+		display: grid;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+		grid-template-columns: auto auto;
+	}
+}
