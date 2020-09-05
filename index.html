@@ -1,15 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-	<meta content="utf-8" http-equiv="encoding">
-	<script>
-	window.onload = function(){
-		window.location.href = 'http://www.michael-nishiguchi.codes/node:3000';
-		console.log("new location");
-	};
-	</script>
+<html lang="en" data-theme="light">
+
+<head>
+    <title>Michael Nishiguchi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg" href="logo.svg">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
 </head>
-<body></body>
-  
+
+<body id="content">
+    <div class="sidenav" id="mySidenav"><a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a><a href="#">Home</a><a href="#portfolio" onclick="closeNav()">Portfolio</a><a href="#contact" onclick="closeNav()">Contact</a>
+        <div class="toggle-container"><input id="switch" type="checkbox" name="theme"><label for="switch">Toggleer</label></div>
+    </div><span id="hamburger" style="cursor:pointer" onclick="openNav()">&#9776</span>
+    <div id="main"></div>
+    <h1 id="welcome">hello.</h1>
+    <h3>i'm michael.</h3>
+    <h3>check out what i've done</h3><img id="logo" src="images/logo.svg" alt="logo">
+    <div class="container">
+        <div class="container-item">
+            <div id="portfolio">
+                <div class="portfolio-item" id="linode"><a><i class="fab fa-linux"></i><i class="fab fa-ubuntu"> </i><i class="fab fa-linode"></i><i class="fab fa-raspberry-pi"></i></a><a>Linux/Linode/Rasberry Pi</a>
+                    <p>This website and all of the following projects are hosted on a Linode server running Ubuntu. I have also created a backup on a Rasberry Pi.</p>
+                </div>
+                <div class="portfolio-item"><a href="http://michael-nishiguchi.codes:4000"><i class="fab fa-node-js"></i></a><a href="http://michael-nishiguchi.codes:4000">Node JS Note Taking App</a>
+                    <p>Note Taking App</p>
+                </div>
+                <div class="portfolio-item"><a href="http://michael-nishiguchi.codes/nyt/index.html"><i class="fas fa-newspaper"> </i></a><a href="http://michael-nishiguchi.codes/nyt/index.html">Somethin&apos; Good</a>
+                    <p>This was a fun project where I used the New York Times API to retrieve data. The application lets you search for articles and filter articles by topics you don&apos;t want to see.</p>
+                </div>
+                <div class="portfolio-item"><a href="http://michael-nishiguchi.codes/tic-tac-toe/"> <i class="fas fa-gamepad"></i></a><a href="http://michael-nishiguchi.codes/tic-tac-toe/">Tic-Tac-Toe</a>
+                    <p>Here's a tic-tac-toe game that I made with the Twitter Bootstrap framework. It uses a minimax algorithm to make an unbeatable opponent.</p>
+                </div>
+                <div class="portfolio-item"><a><i class="fab fa-adobe"></i></a><a>Adobe CC Projects</a>
+                    <p>Here is some work I have done in Adobe Illustrator and Photoshop. The first 5 are icons and the last image is an Under Armor ad that I recreated.</p>
+                </div>
+                <div class="portfolio-item">
+                    <figure><img src="images/headphones.png" alt="over ear headphones"></figure>
+                </div>
+                <div class="portfolio-item">
+                    <figure><img src="images/speaker.png" alt="speaker"></figure>
+                </div>
+                <div class="portfolio-item">
+                    <figure><img src="images/microphone.png" alt="stick microphone"></figure>
+                </div>
+                <div class="portfolio-item">
+                    <figure><img src="images/old-microphone.png" alt="old school microphone"></figure>
+                </div>
+                <div class="portfolio-item">
+                    <figure><img src="images/earbuds.png" alt="earbuds"></figure>
+                </div>
+                <div class="portfolio-item">
+                    <figure><img src="images/climber.jpg" alt="woman climbing"></figure>
+                </div>
+            </div>
+		</div>
+		<!--
+        <div class="container-full">
+            <div id="contact">
+                <form class="contact" action="/sendEmail" method="post">
+                    <h2>Send me a message</h2>
+                    <p>or shoot me an email at <a href="mailto: mikenishiguchi@gmail.com">mikenishiguchi@gmail.com</a></p><input class="emailSubject" name="subject" type="text" placeholder="subject" required><textarea type="text" name="message" rows="5"
+                        placeholder="Your message..." required></textarea><button class="btn btn-block blueBtn" type="submit">Send</button></form>
+            </div>
+		</div>
+	-->
+    </div>
+</body>
+
 </html>
