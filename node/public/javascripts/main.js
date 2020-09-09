@@ -22,6 +22,10 @@ window.onload = function() {
 			document.documentElement.setAttribute('data-theme', 'light');
 		}
 	});
+
+	$('#close-modal').click(function() {
+		$('.modal').css('display', 'none');
+	});
 };
 
 let trans = () => {

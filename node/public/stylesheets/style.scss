@@ -29,6 +29,11 @@ $default-speed: .3s;
 
 //fonts
 @import 'https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300&display=swap';
+
+* {
+	box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -39,7 +44,7 @@ h5 {
 }
 html {
 	scroll-behavior: smooth;
-	box-sizing: border-box;
+	//box-sizing: border-box;
 }
 body {
 	font-family: 'Roboto';
@@ -148,6 +153,7 @@ i.fa-arrow-down {
 			display: block;
 			color: var(--text-color);
 			text-decoration: none;
+			padding: 20px 20px 0 20px;
 
 			&:hover {
 				opacity: $hover-opacity;
@@ -163,8 +169,11 @@ i.fa-arrow-down {
 
 .contact {
 	background-color: var(--nav-surface);
-	padding: 40px;
+	padding: 20px;
 	box-shadow: $material-shadow;
+	width: 100%;
+	//box-sizing: border-box;
+
 	input,
 	textarea {
 		font-family: 'Lato', sans-serif;
@@ -176,6 +185,7 @@ i.fa-arrow-down {
 		border: none;
 		box-shadow: $material-shadow;
 		color: var(--text-color);
+		//box-sizing: border-box;
 	}
 	button {
 		padding: 10px;
@@ -239,6 +249,29 @@ label:active:after {
 }
 //end toggle button
 
+//modal
+.modal {
+	background-color: var(--nav-surface);
+	padding: 20px;
+	box-shadow: $material-shadow;
+	button {
+		padding: 10px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 1.5em;
+		color: var(--text-color);
+		background-color: $primary-color;
+		border: none;
+		box-shadow: $material-shadow;
+		width: 50%;
+		//transition: $default-speed;
+		&:hover {
+			cursor: pointer;
+			background-color: $primary-color-hover;
+			transition: $default-speed;
+		}
+	}
+}
+
 html.transition,
 html.transition *,
 html.transition *:before,
@@ -248,8 +281,9 @@ html.transition *:after {
 }
 
 @media (min-width: 1200px) {
-	body {
-		//background-color: pink;
+	.modal {
+		width: 800px;
+		margin: 0 auto;
 	}
 	#main {
 	}

@@ -13,6 +13,10 @@ html[data-theme=dark] {
   --heading-color: #ee9b02;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -24,7 +28,6 @@ h5 {
 
 html {
   scroll-behavior: smooth;
-  box-sizing: border-box;
 }
 
 body {
@@ -125,6 +128,7 @@ i.fa-arrow-down:hover {
   display: block;
   color: var(--text-color);
   text-decoration: none;
+  padding: 20px 20px 0 20px;
 }
 #portfolio .portfolio-item a:hover {
   opacity: 30%;
@@ -137,8 +141,9 @@ i.fa-arrow-down:hover {
 
 .contact {
   background-color: var(--nav-surface);
-  padding: 40px;
+  padding: 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  width: 100%;
 }
 .contact input,
 .contact textarea {
@@ -212,6 +217,27 @@ label:active:after {
   width: 45px;
 }
 
+.modal {
+  background-color: var(--nav-surface);
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.modal button {
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+  color: var(--text-color);
+  background-color: #ee9b02;
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  width: 50%;
+}
+.modal button:hover {
+  cursor: pointer;
+  background-color: #fdc04e;
+  transition: 0.3s;
+}
+
 html.transition,
 html.transition *,
 html.transition *:before,
@@ -221,6 +247,11 @@ html.transition *:after {
 }
 
 @media (min-width: 1200px) {
+  .modal {
+    width: 800px;
+    margin: 0 auto;
+  }
+
   .container {
     width: 800px;
     margin: 0 auto;
