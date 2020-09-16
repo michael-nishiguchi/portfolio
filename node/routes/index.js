@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 	res.render('index', { title: 'Express' });
 });
 
+/*
 router.get('/league', function(req, res, next) {
 	//https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=p7qxACKrkRzaWoswy2mvAGBGQ0faP7oW
 	http.get('http://ddragon.leagueoflegends.com/cdn/10.16.1/data/en_US/champion.json', (res) => {
@@ -22,25 +23,27 @@ router.get('/league', function(req, res, next) {
 			process.stdout.write(d);
 			console.log(d);
 		})
+		.on('end', ()
 		.on('error', (e) => {
 			console.error(e);
 		});
-	/*	request(
+		request(
 		'http://ddragon.leagueoflegends.com/cdn/10.16.1/data/en_US/champion.json',
-		{ json: true },
-		(err, res, body) => {
-			if (err) {
-				return console.log(err);
-			}
-			console.log(body.url);
-			console.log(body.explanation);
-		}
-	);
-	*/
+												{ json: true },
+												(err, res, body) => {
+													if (err) {
+														return console.log(err);
+													}
+													console.log(body.url);
+													console.log(body.explanation);
+												}
+											);
+	
 	res.render('league', {
 		title: 'Express'
 	});
 });
+*/
 
 router.get('');
 
