@@ -35,9 +35,8 @@ app.post('/login', (req, res) => {
 	ssn = req.session;
 
 	var email = req.body.email;
-	var password = req.body.password;
+	let password = req.body.password;
 	let hash = bcrypt.hashSync(password, 10);
-	console.log('Hash: ' + hash);
 
 	var sql = 'SELECT * FROM user_account WHERE email = $1 LIMIT 1';
 	pool.query(sql, [ email ], function(err, result) {
@@ -45,6 +44,17 @@ app.post('/login', (req, res) => {
 			console.error('Error running query', err);
 		}
 		else {
+			//logging
+			for(var i = 0; i < result.rows.length; i++) {
+				console.log("=================" + result.rows[i]);
+			}
+
+			//end logging
+			if(result.rows[0] == 'undefined' || result.rows[0] == null) {
+				res.render('pages/login', {
+					alert: 'Login failed. Please try again or register a new account.'
+				});
+			}
 			bcrypt.compare(password, result.rows[0].password, function(err, same) {
 				if (err) {
 					console.error('Error comparing passwords', err);
@@ -57,7 +67,9 @@ app.post('/login', (req, res) => {
 						result = getNotes(id, res);
 					}
 					else {
-						res.send({ success: false });
+						res.render('pages/login', {
+							alert: 'Login failed. Please try again or register a new account.'
+						});
 					}
 				}
 			});
@@ -74,10 +86,22 @@ app.get('/logout', function(req, res, next) {
 				return next(err);
 			}
 			else {
-				return res.redirect('login.html');
+				return res.redirect('login');
 			}
 		});
 	}
+});
+
+app.get('/viewRegister', function(req, res){
+	res.render('pages/register', {
+	  title: 'Home'
+	});
+});
+
+app.get('/viewLogin', function(req, res){
+	res.render('pages/login', {
+	  title: 'Home'
+	});
 });
 
 app.post('/register', (req, res) => {
@@ -86,14 +110,26 @@ app.post('/register', (req, res) => {
 	var passwordCopy = req.body.passwordCopy;
 
 	if (password != passwordCopy) {
-		res.redirect('register.html');
+		res.render('pages/register', {
+			alert: 'The passwords do not match. Please try again'
+		});
 	}
 	else {
 		let hash = bcrypt.hashSync(password, 10);
 		var sql = 'INSERT INTO user_account (email, password) VALUES($1, $2) RETURNING user_account_id';
 		pool.query(sql, [ email, hash ], function(err, result) {
 			if (err) {
-				console.error('Error registering user', err);
+				if(err.code == 23505) {
+					res.render('pages/register', {
+						alert: 'This email has already been used. Please use another'
+					});
+					
+				}
+				else{
+					res.render('pages/register', {
+						alert: 'Error'
+					});
+				}
 			}
 			else {
 				ssn = req.session;
@@ -160,8 +196,9 @@ app.post('/deleteNote', (req, res) => {
 	});
 });
 
+
 app.get('/', (req, res) => {
-	res.redirect('login.html');
+	res.render('pages/login');
 });
 app.use('/', router);
 
