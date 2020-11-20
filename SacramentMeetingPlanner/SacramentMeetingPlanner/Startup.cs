@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using SacramentMeetingPlanner.Data;
 
+
 namespace SacramentMeetingPlanner
 {
     public class Startup
@@ -37,7 +38,8 @@ namespace SacramentMeetingPlanner
             services.AddRazorPages();
 
             services.AddDbContext<SacramentMeetingPlannerContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SacramentMeetingPlannerContext")));
+                //options.UseSqlite(Configuration.GetConnectionString("SacramentMeetingPlannerContext")));
+                options.UseSqlServer(Configuration.GetConnectionString("SacramentMeetingPlannerContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +51,7 @@ namespace SacramentMeetingPlanner
             }
             else
             {
+                
                 app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();

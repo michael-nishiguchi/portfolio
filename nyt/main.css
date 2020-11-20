@@ -11,7 +11,8 @@
 
 article {
 	border-bottom: 2px solid black;
-	margin-bottom: 20px;
+	padding-bottom: 50px;
+	margin-top: 20px;
 }
 
 #topStories a {

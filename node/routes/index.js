@@ -6,6 +6,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+	console.log("going to home page");
 	res.render('index', { title: 'Express' });
 });
 
@@ -45,7 +46,7 @@ router.get('/league', function(req, res, next) {
 });
 */
 
-router.get('');
+//router.get('');
 
 router.post('/sendEmail', function(req, res) {
 	var nodemailer = require('nodemailer');
@@ -89,5 +90,7 @@ router.post('/sendEmail', function(req, res) {
 		email: true
 	});
 });
+
+console.log("end of router");
 
 module.exports = router;

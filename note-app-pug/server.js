@@ -8,6 +8,7 @@ var router = express.Router();
 const path = require('path');
 //const port = 3000;
 const bcrypt = require('bcryptjs');
+console.log("here");
 
 console.log(__dirname);
 
