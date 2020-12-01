@@ -26,6 +26,16 @@ window.onload = function() {
 	$('#close-modal').click(function() {
 		$('.modal').css('display', 'none');
 	});
+
+	//display adobe projects
+
+	$('#adobe a').click(function() {
+		$(".adobe-item").toggleClass('show');
+		$("#contact").toggleClass('transition-contact');
+		//$(".adobe-item").css("display", "block")
+
+	
+	})
 };
 
 let trans = () => {
@@ -55,3 +65,5 @@ function applyInitialTheme() {
 		htmlTag.setAttribute('data-theme', theme);
 	}
 }
+
+
