@@ -135,10 +135,15 @@ i.fa-arrow-down {
   padding: 20px 20px 0 20px;
 }
 
-#portfolio .portfolio-item iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
+#portfolio .portfolio-item a img.zion {
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 #portfolio .portfolio-item a:hover {
@@ -163,6 +168,16 @@ i.fa-arrow-down {
   cursor: pointer;
 }
 
+.custom-icon {
+  height: 100px;
+  stroke: red;
+  padding: 0 10px;
+}
+
+.custom-icon:hover {
+  cursor: pointer;
+}
+
 .portfolio-item.adobe-item {
   z-index: -1;
 }
@@ -170,6 +185,7 @@ i.fa-arrow-down {
 .show {
   bottom: 0 !important;
   transition: bottom 500ms;
+  z-index: 99 !important;
 }
 
 .contact {
@@ -296,12 +312,6 @@ html.transition *:after {
   }
 
   #portfolio {
-    /*
-    display: grid;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    grid-template-columns: auto auto;
-    */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 20px;
@@ -319,26 +329,31 @@ html.transition *:after {
 
   .first-transition {
     position: relative;
-    bottom: 367px;
+    bottom: 350px;
+    transition: 0.3s;
   }
 
   .second-transition {
     position: relative;
-    bottom: 736px;
+    bottom: 685px;
+    transition: 0.3s;
   }
 
   .third-transition {
     position: relative;
-    bottom: 1099px;
+    bottom: 1019px;
+    transition: 0.3s;
   }
 
   .fourth-transition {
     position: relative;
-    bottom: 1467px;
+    bottom: 1355px;
+    transition: 0.3s;
   }
 
   #contact {
-    margin-top: -1400px;
+    margin-top: -1310px;
+    transition: 0.3s;
   }
 
   .transition-contact {

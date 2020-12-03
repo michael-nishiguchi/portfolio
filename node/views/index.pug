@@ -19,57 +19,49 @@ block content
       #portfolio
         .portfolio-item#linode
           a
-            i.fab.fa-linux
-            i.fab.fa-ubuntu 
-            i.fab.fa-linode
-            i.fab.fa-raspberry-pi
+            img.custom-icon(src="images/icons-05.svg")
+            img.custom-icon(src="images/icons-07.svg")
           a Linux / Linode / Rasberry Pi
           p This website and all of the following projects are hosted on a Linode server running Ubuntu. I have also created a backup on a Rasberry Pi.
         .portfolio-item
           a(href="https://michael-nishiguchi.codes:5000")
-            i.fas.fa-database
-            i.fab.fa-windows
+            img.custom-icon(src="images/icons-01.svg")
+            img.custom-icon(src="images/icons-02.svg")
           a(href="https://michael-nishiguchi.codes:5000") Schedule creation tool
           p This is an ASP.NET application that can help people create church meeting schedules. It uses SqLite to manage the database.
         .portfolio-item
           a(href='http://michael-nishiguchi.codes:4000')
-            i.fab.fa-node-js
+            img.custom-icon(src="images/icons-03.svg")
           a(href='http://michael-nishiguchi.codes:4000') Node JS Note Taking App
           p Here's a notetaking app that uses NodeJS and Express. You can register for an account, log in/out and view/edit/delete notes for each account.
         .portfolio-item
           a(href='http://michael-nishiguchi.codes/nyt/index.html')
-            i.fas.fa-newspaper 
+            img.custom-icon(src="images/icons-13.svg")
           a(href='http://michael-nishiguchi.codes/nyt/index.html') Somethin' Good
           p This was a fun project where I used the New York Times API to retrieve data. The application lets you search for articles and filter articles by topics you don&apos;t want to see.
         .portfolio-item
           a(href='http://michael-nishiguchi.codes/tic-tac-toe/')  
-            i.fas.fa-gamepad
+            img.custom-icon(src="images/icons-06.svg")
           a(href='http://michael-nishiguchi.codes/tic-tac-toe/') Tic-Tac-Toe
           p Here's a tic-tac-toe game that I made with the Twitter Bootstrap framework. It uses a minimax algorithm to make an unbeatable opponent.
         .portfolio-item#adobe
           a
-            i.fab.fa-adobe
+            img.custom-icon(src="images/icons-09.svg")
           a Adobe CC Projects
           p Here is some work I have done in Adobe Illustrator and Photoshop. The first 5 are icons and the last image is an Under Armor ad that I recreated.
+        .portfolio-item.adobe-item.first-transition#zion
+          iframe( width="100%" height="100%" src="https://www.youtube.com/embed/VEohGJnFIXg?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen )
         .portfolio-item.adobe-item.first-transition
-           iframe(src="https://www.youtube.com/embed/VEohGJnFIXg")
-        .portfolio-item.adobe-item.first-transition
-          figure
             img(src='images/headphones.png' alt='over ear headphones')
         .portfolio-item.adobe-item.second-transition
-          figure
             img(src='images/speaker.png' alt='speaker')
         .portfolio-item.adobe-item.second-transition
-          figure
             img(src='images/microphone.png' alt='stick microphone')
         .portfolio-item.adobe-item.third-transition
-          figure
             img(src='images/old-microphone.png' alt='old school microphone')
         .portfolio-item.adobe-item.third-transition
-          figure
             img(src='images/earbuds.png' alt='earbuds')
         .portfolio-item.adobe-item.fourth-transition
-          figure
             img(src='images/climber.jpg' alt='woman climbing')
     .container-full
       #contact
