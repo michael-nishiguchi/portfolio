@@ -1,5 +1,5 @@
 /* BASIC */
-html {
+* {
 	box-sizing: border-box;
 }
 
@@ -117,10 +117,6 @@ input[type=reset],
 	transition: all 0.2s ease-in-out;
 }
 
-.registerBtn {
-	background-color: ;
-}
-
 input[type=button]:hover,
 input[type=submit]:hover,
 input[type=reset]:hover {
@@ -148,7 +144,6 @@ input[type=password] {
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
-	margin: 5px;
 	width: 85%;
 	border: 2px solid #f6f6f6;
 	-webkit-transition: all 0.2s ease-in-out;
@@ -289,17 +284,25 @@ input[type=submit]:hover {
 }
 
 /* NAVIGATION */
-@import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
-.navbar-brand {
-	font-family: 'Montserrat', sans-serif;
-	text-transform: uppercase;
+/*
+text-transform: uppercase;
 }
+*/
 
 .navbar .nav {
 	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	font-size: 1.2rem;
+}
+.navbar ul li a {
+	line-height: 20px;
+	text-align: center;
+}
+
+.navbar a,
+.navbar a.form-inin {
+	text-align: center;
 }
 
 .navbar-inverse {

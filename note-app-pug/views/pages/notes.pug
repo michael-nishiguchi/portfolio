@@ -6,7 +6,8 @@ html(lang='en')
     .container
       if (success == true) 
         h4(class="alert") *Note updated
-      h1 Welcome to notes
+      if (notes.length == 0)
+        h1 Welcome to notes
       each note in notes
         form(action="/edit" class="notes" method="post")
           input(type="hidden" name="note_id" value=note.note_id)
