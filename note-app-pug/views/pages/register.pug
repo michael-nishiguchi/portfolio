@@ -15,8 +15,9 @@ html
           input#email.fadeIn.second(type="text" name="email" placeholder="email" autofocus="autofocus" required="")
           input#password.fadeIn.third(type="password" name="password" placeholder="password" required="")
           input#passwordCopy.fadeIn.fourth(type="password" name="passwordCopy" placeholder="repeat password" required="")
-          button.btn.fadeIn.fifth.registerBtn.blueBtn(type="submit") Register
-          input.registerBtn.fadeIn.fifth(type="button" onclick="viewLogin()" value="login")
+          input.fadeIn.fifth(type="submit" value="Register")
+          br
+          input.fadeIn.fifth(type="button" onclick="viewLogin()" value="login")
 script.
   function viewLogin() {
     window.location.href = '/viewLogin'

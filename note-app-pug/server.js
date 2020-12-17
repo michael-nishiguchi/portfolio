@@ -152,6 +152,7 @@ app.post('/newNote', (req, res) => {
 	var title = req.body.title;
 	var content = req.body.content;
 	let curr_date = getDateString();
+	console.log("this is the current date: " + curr_date);
 	var user_id = ssn.userId;
 
 	var sql = 'INSERT INTO notes (title, content, date_created, user_account_id) VALUES($1, $2, $3, $4)';
@@ -166,12 +167,29 @@ app.post('/newNote', (req, res) => {
 	});
 });
 
+app.post('/editView', (req, res) => {
+	var myTitle = req.body.title;
+	var myContent = req.body.content;
+	var myNote_id = req.body.note_id;
+	let curr_date = getDateString();
+
+	console.log(myTitle + ' ' + myContent + ' ' + myNote_id + ' ' + curr_date);
+	res.render('pages/edit', {
+		title: myTitle,
+		content: myContent,
+		note_id: myNote_id,
+		curr_date: curr_date
+	});
+})
+
 app.post('/edit', (req, res) => {
 	var title = req.body.title;
 	var content = req.body.content;
 	var note_id = req.body.note_id;
 	let curr_date = getDateString();
 
+
+console.log(title + content + note_id + curr_date);
 	var sql = 'UPDATE notes SET title = $1, content = $2, date_created = $3 WHERE note_id = $4';
 	pool.query(sql, [ title, content, curr_date, note_id ], function(err, result) {
 		if (err) {
@@ -192,6 +210,7 @@ app.post('/deleteNote', (req, res) => {
 		}
 		else {
 			getNotes(ssn.userId, res);
+
 		}
 	});
 });

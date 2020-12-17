@@ -4,17 +4,11 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
   #navbarTogglerDemo01.collapse.navbar-collapse
     ul.navbar-nav.mr-auto.mt-2.mt-lg-0
       a.navbar-brand(href='#')
-        img(src="bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top") 
-        | Bootstrap
-        //img(src="note-logo.svg" alt="note logo" width="30" height="30")
-      li.nav-item.active
-        a.nav-link(href='/viewNotes')
-          | Home 
-          span.sr-only (current)
-      li.nav-item.active
-        a.nav-link(href="/viewlogin") Logout
-      li.nav-item.active
-        a.nav-link(href="/add") Add
+        img(src="note-logo.svg" width="30" height="30" class="d-inline-block align-top") 
+      a.navbar-brand(href="/viewNotes") Home
+      a.navbar-brand(href="/viewNotes") All Notes
+      a.navbar-brand(href="/add") New
+      a.navbar-brand(href="/viewlogin") Logout
       
       //a(href="/add").navbar-brand
         .form-inline.my-2.my-lg-0
