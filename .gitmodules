@@ -1,3 +1,6 @@
 [submodule "note-app-pug"]
 	path = note-app-pug
 	url = https://github.com/nishiguchi-michael/note-app-pug.git
+[submodule "food-tracker"]
+	path = food-tracker
+	url = https://github.com/nishiguchi-michael/food-tracker.git
