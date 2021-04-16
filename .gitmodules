@@ -1,0 +1,3 @@
+[submodule "note-app-pug"]
+	path = note-app-pug
+	url = https://github.com/nishiguchi-michael/note-app-pug.git
