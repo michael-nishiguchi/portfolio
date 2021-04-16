@@ -3,11 +3,11 @@ extends layout
 block content
   h1#welcome hello.
   if email == true
-    .modal 
+    .modal#modal
       p Email was sent! Thanks for reaching out.
       button(id="close-modal") Close
   else if email == false
-    .modal 
+    .modal#modal
       p Email was not sent. Try again later
       button(id="close-modal") Close
 
@@ -40,7 +40,7 @@ block content
           a(href='http://michael-nishiguchi.codes/nyt/index.html') Somethin' Good
           p This was a fun project where I used the New York Times API to retrieve data. The application lets you search for articles and filter articles by topics you don&apos;t want to see.
         .portfolio-item
-          a(href='http://michael-nishiguchi.codes/tic-tac-toe/')  
+          a(href='http://michael-nishiguchi.codes/tic-tac-toe/')
             img.custom-icon(src="images/icons-06.svg")
           a(href='http://michael-nishiguchi.codes/tic-tac-toe/') Tic-Tac-Toe
           p Here's a tic-tac-toe game that I made with the Twitter Bootstrap framework. It uses a minimax algorithm to make an unbeatable opponent.
@@ -67,7 +67,7 @@ block content
       #contact
         form(action="/sendEmail" class="contact" method="post")
           h2 Send me a message
-          p or shoot me an email at 
+          p or shoot me an email at
             a(href="mailto: mikenishiguchi@gmail.com") mikenishiguchi@gmail.com
           input(name="subject" class="emailSubject" type="text" placeholder="subject" required)
           textarea(type="text" name="message" rows="5" placeholder="Your message..." required)
