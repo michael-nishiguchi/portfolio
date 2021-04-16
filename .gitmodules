@@ -4,3 +4,6 @@
 [submodule "food-tracker"]
 	path = food-tracker
 	url = https://github.com/nishiguchi-michael/food-tracker.git
+[submodule "nyt"]
+	path = nyt
+	url = https://github.com/nishiguchi-michael/nyt.git
