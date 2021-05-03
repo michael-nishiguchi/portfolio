@@ -41,7 +41,7 @@ html {
   flex-wrap: wrap;
 }
 .welcome h1 {
-  font-size: 10vw;
+  font-size: calc(1.5rem + 5vw);
   margin-bottom: 0;
   position: relative;
   display: inline-block;

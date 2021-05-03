@@ -43,7 +43,7 @@ html {
 	flex-wrap: wrap;
 	h1 {
 		//font-size: 6em;
-		font-size: 10vw;
+		font-size: calc(1.5rem + 5vw);
 		margin-bottom: 0;
 		position: relative;
 		display: inline-block;
