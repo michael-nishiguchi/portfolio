@@ -38,7 +38,7 @@ router.get('/league', function(req, res, next) {
 													console.log(body.explanation);
 												}
 											);
-	
+
 	res.render('league', {
 		title: 'Express'
 	});
@@ -77,8 +77,7 @@ router.post('/sendEmail', function(req, res) {
 	transporter.sendMail(mailOptions, function(error, info) {
 		if (error) {
 			console.log(error);
-		}
-		else {
+		} else {
 			console.log('Email sent: ' + info.response);
 		}
 	});

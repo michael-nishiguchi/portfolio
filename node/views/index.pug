@@ -1,7 +1,6 @@
 extends layout
 
 block content
-  h1#welcome hello.
   if email == true
     .modal#modal
       p Email was sent! Thanks for reaching out.
@@ -10,43 +9,85 @@ block content
     .modal#modal
       p Email was not sent. Try again later
       button(id="close-modal") Close
-
-  h3 i'm michael.
-  h3 check out what i've done
-  img#logo(src='images/logo.svg' alt='logo')
+  .welcome
+    .hundred
+      h1 i'm michael
+      h2 i'm a web developer
+      img#logo(src='images/logo.svg' alt='logo')
   .container
     .container-item
       #portfolio
         .portfolio-item#linode
-          a
-            img.custom-icon(src="images/icons-05.svg")
-            img.custom-icon(src="images/icons-07.svg")
-          a Linux / Linode / Rasberry Pi
+          .icons
+            a
+              i(class="fab fa-ubuntu")
+            a
+              i(class="fab fa-linode")
+            a
+              i(class="fab fa-raspberry-pi")
+            a
+              i(class="fab fa-docker")
+          .hundred
+            a Linux / Linode / Rasberry Pi
+          .hundred
+            a(href="https://github.com/nishiguchi-michael/portfolio" class="git" target="_blank") Github Repository
+              img(src="images/icons/git.png")
           p This website and all of the following projects are hosted on a Linode server running Ubuntu. I have also created a backup on a Rasberry Pi.
         .portfolio-item
-          a(href="https://michael-nishiguchi.codes:5000")
-            img.custom-icon(src="images/icons-01.svg")
-            img.custom-icon(src="images/icons-02.svg")
-          a(href="https://michael-nishiguchi.codes:5000") Schedule creation tool
+          .icons
+            a(href="https://food.michael-nishiguchi.com" target="_blank")
+              i(class="fab fa-node")
+            a(href="https://food.michael-nishiguchi.com" target="_blank")
+              i(class="fas fa-database")
+            a(href="https://food.michael-nishiguchi.com" target="_blank")
+              i(class="fab fa-google")
+          .hundred
+            a(class="title" href="https://food.michael-nishiguchi.com" target="_blank") Food Tracker
+          .hundred
+            a(href="https://github.com/nishiguchi-michael/food-tracker" class="git" target="_blank") Github Repository
+              img(src="images/icons/git.png")
+          p This is a food tracker made using Node.JS, PostgresSQL, and Google's authentication API. I love tracking nutrition and wasn't happy with the available tools like My Fitness Pal or Lose It so I decided to make my own. I also got to learn how to make a website with a neumorphic user interface.
+
+        .portfolio-item
+          .icons
+            a(href="https://planner.michael-nishiguchi.com" target="_blank")
+              i(class="fab fa-windows")
+              i(class="far fa-clipboard")
+          .hundred
+            a(href="https://planner.michael-nishiguchi.com" class="title" target="_blank") Schedule creation tool
+          .hundred
+            a(href="https://github.com/nishiguchi-michael/meeting-planner" class="git" target="_blank") Github Repository
+              img(src="images/icons/git.png")
           p This is an ASP.NET application that can help people create church meeting schedules. It uses SqLite to manage the database.
+
         .portfolio-item
-          a(href='http://michael-nishiguchi.codes:4000')
-            img.custom-icon(src="images/icons-03.svg")
-          a(href='http://michael-nishiguchi.codes:4000') Node JS Note Taking App
+          .icons
+            a(href='https://notes.michael-nishiguchi.com' target="_blank")
+              i(class="fas fa-book")
+          a(href='https://notes.michael-nishiguchi.com' target="_blank" class="title") Node JS Note Taking App
+          .hundred
+            a(href="https://github.com/nishiguchi-michael/note-app-pug" target="_blank" class="git") github repository
+              img(src="images/icons/git.png")
           p Here's a notetaking app that uses NodeJS and Express. You can register for an account, log in/out and view/edit/delete notes for each account.
+
         .portfolio-item
-          a(href='http://michael-nishiguchi.codes/nyt/index.html')
-            img.custom-icon(src="images/icons-13.svg")
-          a(href='http://michael-nishiguchi.codes/nyt/index.html') Somethin' Good
+          .icons
+            a(href='https://michael-nishiguchi.com/nyt/index.html' target="_blank")
+              i(class="far fa-newspaper")
+          a(href='http://michael-nishiguchi.com/nyt/index.html' target="_blank" class="title") Somethin' Good
+          .hundred
+            a(href="https://github.com/nishiguchi-michael/nyt" target="_blank" class="git") github repository
+              img(src="images/icons/git.png")
           p This was a fun project where I used the New York Times API to retrieve data. The application lets you search for articles and filter articles by topics you don&apos;t want to see.
-        .portfolio-item
-          a(href='http://michael-nishiguchi.codes/tic-tac-toe/')
-            img.custom-icon(src="images/icons-06.svg")
-          a(href='http://michael-nishiguchi.codes/tic-tac-toe/') Tic-Tac-Toe
-          p Here's a tic-tac-toe game that I made with the Twitter Bootstrap framework. It uses a minimax algorithm to make an unbeatable opponent.
+        //- .portfolio-item
+        //-   a(href='http://michael-nishiguchi.codes/tic-tac-toe/')
+        //-     img.custom-icon(src="images/icons-06.svg")
+        //-   a(href='http://michael-nishiguchi.codes/tic-tac-toe/') Tic-Tac-Toe
+        //-   p Here's a tic-tac-toe game that I made with the Twitter Bootstrap framework. It uses a minimax algorithm to make an unbeatable opponent.
         .portfolio-item#adobe
-          a
-            img.custom-icon(src="images/icons-09.svg")
+          .icons
+            a
+              img.custom-icon(src="images/cc.jfif")
           a Adobe CC Projects
           p Here is some work I have done in Adobe Illustrator and Photoshop. The first 5 are icons and the last image is an Under Armor ad that I recreated.
         .portfolio-item.adobe-item.first-transition#zion
@@ -66,8 +107,8 @@ block content
     .container-full
       #contact
         form(action="/sendEmail" class="contact" method="post")
-          h2 Send me a message
-          p or shoot me an email at
+          h2 Shoot me a message at
+          p
             a(href="mailto: mikenishiguchi@gmail.com") mikenishiguchi@gmail.com
           input(name="subject" class="emailSubject" type="text" placeholder="subject" required)
           textarea(type="text" name="message" rows="5" placeholder="Your message..." required)
