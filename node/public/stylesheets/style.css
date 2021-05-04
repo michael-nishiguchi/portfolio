@@ -74,6 +74,7 @@ body {
   position: relative;
   z-index: 1;
   text-transform: lowercase;
+  margin: 0;
 }
 
 #hamburger {
