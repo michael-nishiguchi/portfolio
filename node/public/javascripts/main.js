@@ -57,8 +57,8 @@ window.onload = function() {
 
 	var grayOpaque = 'rgba(67, 67, 67, .7)';
 	var gray = 'rgba(67, 67, 67, 1)';
-	var yellow = 'rgba(238, 155, 2, 1)';
-	var blue = 'rgba(2, 86, 238, .7)';
+	var yellow = 'rgba(238, 155, 2, .2)';
+	var blue = 'rgba(2, 86, 238, .6)';
 	var lightBackground = 'rgba(226, 225, 224, 1)';
 	var lightBackgroundOpaque = 'rgba(226, 225, 224, .7)';
 

@@ -109,7 +109,7 @@ body {
 #hamburger {
 	//color: var(--surface);
 	font-size: 3em;
-	position: absolute;
+	position: fixed;
 	left: 20px;
 	top: 20px;
 	z-index: 1;
