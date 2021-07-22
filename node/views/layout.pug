@@ -7,12 +7,14 @@ html(lang="en", data-theme="light")
     link(rel='icon', type='image/svg', href='/images/logo.svg')
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous")
     meta(name="image" property="og:image" content="https://live.staticflickr.com/65535/50935752953_b2295d41f9_k.jpg")
+    meta(name="description" content="Portfolio for Michael Nishiguchi")
     script(src='javascripts/main.js')
   body#content
     #mySidenav.sidenav
       a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
       a(href='#') Home
       a(href='#portfolio' onclick='closeNav()') Portfolio
+      a(href='images/Resume - Nishiguchi.pdf"') Resume
       a(href='#contact' onclick='closeNav()') Contact
       .toggle-container
         input#switch(type='checkbox' name='theme')

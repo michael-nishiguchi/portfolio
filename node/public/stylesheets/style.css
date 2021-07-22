@@ -1,22 +1,23 @@
-@import "https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 html[data-theme=light] {
-  --text-color: black;
+  --text-color: #121212;
   --surface: #e2e1e0;
   --nav-surface: #fff;
-  --heading-color: black;
+  --heading-color: #121212;
   --email: #0256ee;
 }
 
 html[data-theme=dark] {
-  --text-color: white;
-  --surface: #121212;
-  --nav-surface: #434343;
+  --text-color: #e2e1e0;
+  --surface: #434343;
+  --nav-surface: #121212;
   --heading-color: #ee9b02;
   --email: #ee9b02;
 }
 
 * {
   box-sizing: border-box;
+  text-transform: lowercase;
 }
 
 h1,
@@ -24,7 +25,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Lato", sans-serif;
+  font-family: "inter", sans-serif;
   color: var(--text-color);
 }
 
@@ -40,8 +41,16 @@ html {
   align-items: center;
   flex-wrap: wrap;
 }
+.welcome canvas {
+  height: 100vh;
+  width: 100vw;
+}
+.welcome .hundred {
+  position: absolute;
+  top: 1%;
+}
 .welcome h1 {
-  font-size: calc(1.5rem + 5vw);
+  font-size: calc(2rem + 5vw);
   margin-bottom: 0;
   position: relative;
   display: inline-block;
@@ -56,6 +65,10 @@ html {
   height: 0.2em;
   transition: 100ms height ease-in-out;
 }
+.welcome h1,
+.welcome h2 {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 .welcome #logo {
   max-width: 500px;
   margin: 0 auto;
@@ -68,20 +81,20 @@ html {
 }
 
 body {
-  font-family: "Roboto";
+  font-family: "roboto", sans-serif;
   color: var(--text-color);
   background-color: var(--surface);
   position: relative;
   z-index: 1;
-  text-transform: lowercase;
   margin: 0;
 }
 
 #hamburger {
-  color: var(--text-color);
-  font-size: 2em;
+  font-size: 3em;
   position: absolute;
-  left: 5%;
+  left: 20px;
+  top: 20px;
+  z-index: 1;
 }
 
 #hamburger:hover {
@@ -93,7 +106,7 @@ body {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   overflow-x: hidden;
@@ -107,7 +120,7 @@ body {
 }
 
 .mobile-nav {
-  width: 350px;
+  width: 300px;
 }
 .mobile-nav a {
   padding: 20px;
@@ -148,94 +161,102 @@ i.fa-arrow-down {
   display: block;
 }
 
-#portfolio {
-  margin-top: 20px;
-}
-
-#portfolio .portfolio-item {
-  background-color: var(--nav-surface);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  margin-bottom: 30px;
+.template {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
 }
-#portfolio .portfolio-item .title {
-  position: relative;
-  display: inline-block;
-}
-#portfolio .portfolio-item .title:after {
-  content: "";
-  position: absolute;
+.template .template-item {
   width: 100%;
-  background: #0256ee;
-  left: 0;
-  bottom: 0;
-  height: 0.2em;
-  opacity: 0.5;
-  transition: 100ms height ease-in-out;
-}
-#portfolio .portfolio-item .title:hover:after {
-  height: 1em;
-  transition: 100ms height ease-in-out;
-  cursor: pointer;
-}
-#portfolio .portfolio-item .git {
-  font-size: 20px;
-  position: relative;
-  display: inline-block;
-}
-#portfolio .portfolio-item .git img {
-  height: 20px;
-  margin-left: 10px;
-}
-#portfolio .portfolio-item .git:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  background: #ee9b02;
-  left: 0;
-  bottom: 0;
-  height: 0.2em;
-  opacity: 0.5;
-  transition: 100ms height ease-in-out;
-}
-#portfolio .portfolio-item .git:hover:after {
-  height: 1em;
-  transition: 100ms height ease-in-out;
-}
-
-#portfolio .portfolio-item p {
-  opacity: 82%;
   padding: 20px;
+  margin-bottom: 40px;
 }
-
-#portfolio .portfolio-item a {
-  font-size: 2em;
-  font-family: "Lato", sans-serif;
+.template .template-item:first-child {
+  width: 100%;
+  text-align: right;
+}
+.template .template-item .item-img {
+  position: relative;
+}
+.template .template-item .item-img img {
   display: block;
-  color: var(--text-color);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
+  vertical-align: center;
+  border-radius: 5px;
+}
+.template .template-item .item-img #premiere {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 51.41%;
+}
+.template .template-item .item-img #premiere iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+}
+.template .template-item .intro {
+  width: 100%;
+}
+.template .template-item .intro h2 {
+  font-size: 5rem;
+  margin-bottom: 0;
+}
+.template .template-item h2 {
+  font-size: 2.5rem;
+  color: var(--heading-color);
+}
+.template .template-item h2 a {
   text-decoration: none;
 }
-
-#portfolio .portfolio-item a img.zion {
-  max-height: 100%;
-  max-width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+.template .template-item h2 a:hover {
+  opacity: 60%;
+}
+.template .template-item h2 a,
+.template .template-item h2 a:link,
+.template .template-item h2 a:visited,
+.template .template-item h2 a:active {
+  color: var(--heading-color);
+}
+.template .template-item p,
+.template .template-item .link,
+.template .template-item .git {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+.template .template-item .link,
+.template .template-item .git {
+  border-radius: 5px;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-family: "inter", sans-serif;
+  margin-right: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.template .template-item .link {
+  color: white;
+  background: #0256ee;
+}
+.template .template-item .link:hover {
+  background: #013189;
+}
+.template .template-item .git {
+  color: #121212;
+  background: #ee9b02;
+}
+.template .template-item .git:hover {
+  background: #bb7a02;
 }
 
-#portfolio .portfolio-item i {
-  font-size: 2em;
-  padding: 20px 10px 0 10px;
-}
-#portfolio .portfolio-item i:hover {
-  color: #ee9b02;
-  cursor: pointer;
+.fa,
+.fas,
+.fab {
+  padding-left: 10px;
 }
 
 #zion {
@@ -281,10 +302,22 @@ i.fa-arrow-down {
   z-index: 99 !important;
 }
 
+#contact {
+  padding: 20px;
+}
+
 .contact {
   background-color: var(--nav-surface);
   padding: 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contact h2 {
+  text-align: center;
   width: 100%;
 }
 
@@ -295,7 +328,7 @@ i.fa-arrow-down {
 .contact input,
 .contact textarea {
   font-family: "Lato", sans-serif;
-  font-size: 1.5em;
+  font-size: 18px;
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -303,22 +336,25 @@ i.fa-arrow-down {
   border: none;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   color: var(--text-color);
+  border-radius: 5px;
 }
 
 .contact button {
-  padding: 10px;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5em;
+  padding: 15px 25px;
+  font-family: "inter", sans-serif;
+  font-size: 18px;
   color: var(--text-color);
   background-color: #ee9b02;
   border: none;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   width: 50%;
+  border-radius: 5px;
+  margin: 0 auto;
 }
 
 .contact button:hover {
   cursor: pointer;
-  background-color: #fdc04e;
+  background-color: #bb7a02;
   transition: 0.3s;
 }
 
@@ -398,21 +434,8 @@ html.transition *:after {
 }
 
 @media (min-width: 900px) {
-  .sidenav {
-    display: flex;
-    width: 100%;
-    height: auto;
-    position: static;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .sidenav a {
-    font-size: 2em;
-  }
-
-  #hamburger,
-a.closebtn {
-    display: none;
+  .template .template-item {
+    width: 50%;
   }
 
   .modal {
@@ -421,15 +444,8 @@ a.closebtn {
   }
 
   .container {
-    width: 800px;
+    max-width: 75rem;
     margin: 0 auto;
-  }
-
-  #portfolio {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-row-gap: 20px;
-    grid-column-gap: 20px;
   }
 
   #linode,
@@ -439,19 +455,6 @@ a.closebtn {
     -moz-box-shadow: inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow: inset 0 0 10px #000000;
-  }
-
-  #zion {
-    position: static;
-    padding-bottom: 0;
-    height: auto;
-  }
-  #zion iframe {
-    position: static;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
   }
 
   .transition-contact {

@@ -10,106 +10,123 @@ block content
       p Email was not sent. Try again later
       button(id="close-modal") Close
   .welcome
+    canvas(id="canv")
     .hundred
       h1 i'm michael
       h2 i'm a web developer
       img#logo(src='images/logo.svg' alt='logo')
   .container
     .container-item
-      #portfolio
-        .portfolio-item#linode
-          .icons
-            a
-              i(class="fab fa-ubuntu")
-            a
-              i(class="fab fa-linode")
-            a
-              i(class="fab fa-raspberry-pi")
-            a
-              i(class="fab fa-docker")
-          .hundred
-            a Linux / Linode / Rasberry Pi
-          .hundred
-            a(href="https://github.com/nishiguchi-michael/portfolio" class="git" target="_blank") Github Repository
-              img(src="images/icons/git.png")
-          p This website and all of the following projects are hosted on a Linode server running Ubuntu. I have also created a backup on a Rasberry Pi.
-        .portfolio-item
-          .icons
-            a(href="https://food.michael-nishiguchi.com" target="_blank")
-              i(class="fab fa-node")
-            a(href="https://food.michael-nishiguchi.com" target="_blank")
-              i(class="fas fa-database")
-            a(href="https://food.michael-nishiguchi.com" target="_blank")
-              i(class="fab fa-google")
-          .hundred
-            a(class="title" href="https://food.michael-nishiguchi.com" target="_blank") Food Tracker
-          .hundred
-            a(href="https://github.com/nishiguchi-michael/food-tracker" class="git" target="_blank") Github Repository
-              img(src="images/icons/git.png")
-          p This is a food tracker made using Node.JS, PostgresSQL, and Google's authentication API. I love tracking nutrition and wasn't happy with the available tools like My Fitness Pal or Lose It so I decided to make my own. I also got to learn how to make a website with a neumorphic user interface.
+      .template#portfolio
+        .template-item
+          .intro
+            h2 check out my work
+            p This website and all of the following projects are hosted on a Linode server running Ubuntu. I have also created a backup on a Rasberry Pi.
 
-        .portfolio-item
-          .icons
-            a(href="https://planner.michael-nishiguchi.com" target="_blank")
-              i(class="fab fa-windows")
-              i(class="far fa-clipboard")
-          .hundred
-            a(href="https://planner.michael-nishiguchi.com" class="title" target="_blank") Schedule creation tool
-          .hundred
-            a(href="https://github.com/nishiguchi-michael/meeting-planner" class="git" target="_blank") Github Repository
-              img(src="images/icons/git.png")
-          p This is an ASP.NET application that can help people create meeting schedules for my church. It uses SQLite to manage the database.
+        .template-item
+          .item-img
+            img(src="images/food.png" alt="screenshot of food app")
+          h2
+            a(class="title" rel="noopener" href="https://food.michael-nishiguchi.com" target="_blank") Food Tracker
+          p this is a food tracker made using node.js, postgressql, and google's authentication api. i love tracking nutrition and wasn't happy with the available tools like my fitness pal or lose it so i decided to make my own. i also got to learn how to make a website with a neumorphic user interface.
 
-        .portfolio-item
-          .icons
-            a(href='https://notes.michael-nishiguchi.com' target="_blank")
-              i(class="fas fa-book")
-          a(href='https://notes.michael-nishiguchi.com' target="_blank" class="title") Node JS Note Taking App
-          .hundred
-            a(href="https://github.com/nishiguchi-michael/note-app-pug" target="_blank" class="git") github repository
-              img(src="images/icons/git.png")
-          p Here's a notetaking app that uses NodeJS and Express. You can register for an account, log in/out and view/edit/delete notes for each account.
+          a(class="link" rel="noopener" href="https://food.michael-nishiguchi.com" target="_blank") website link
+            i(class="fas fa-link")
+          a(class="git" rel="noopener" href="https://github.com/nishiguchi-michael/food-tracker" target="_blank") github link
+            i(class="fab fa-github")
 
-        .portfolio-item
-          .icons
-            a(href='https://nyt.michael-nishiguchi.com' target="_blank")
-              i(class="far fa-newspaper")
-          a(href='http://nyt.michael-nishiguchi.com' target="_blank" class="title") Somethin' Good
-          .hundred
-            a(href="https://github.com/nishiguchi-michael/nyt" target="_blank" class="git") github repository
-              img(src="images/icons/git.png")
-          p This was a fun project where I used the New York Times API to retrieve data. The application lets you search for articles and filter articles by topics you don&apos;t want to see.
+        .template-item
+          .item-img
+            img(src="images/notitia.png" alt="screenshot of notitia website")
+          h2
+            a(class="title" rel="noopener" href="https://notitiabio.com/" target="_blank") Notitia biotechnologies
+          p this is a website i designed, wireframed with Adobe XD and created for notitia, a biotech company in princeton, nj.
+          a(class="link" rel="noopener" href="https://notitiabio.com/" target="_blank") website link
+            i(class="fas fa-link")
+          a(class="git" rel="noopener" href="https://github.com/Notitiabio/notitiabio.github.io" target="_blank") github link
+            i(class="fab fa-github")
+
+        .template-item
+          .item-img
+            img(src="images/meeting.png" alt="screenshot of schedule app")
+          h2
+            a(class="title" rel="noopener" href="https://planner.michael-nishiguchi.com/" target="_blank") Schedule Creation tool
+          p this is an asp.net application that can help people create meeting schedules for my church. it uses sqlite to manage the database.
+          a(class="link" rel="noopener" href="https://planner.michael-nishiguchi.com" target="_blank") website link
+            i(class="fas fa-link")
+          a(class="git" rel="noopener" href="https://github.com/nishiguchi-michael/meeting-planner" target="_blank") github link
+            i(class="fab fa-github")
+
+        .template-item
+          .item-img
+            img(src="images/notes.png" alt="screenshot of note app")
+          h2
+            a(class="title" rel="noopener" href="https://notes.michael-nishiguchi.com/" target="_blank") note taking app
+          p here's a note taking app that uses nodejs and express. you can register for an account, log in/out and view/edit/delete notes for each account.
+          a(class="link" rel="noopener" href="https://notes.michael-nishiguchi.com" target="_blank") website link
+            i(class="fas fa-link")
+          a(class="git" rel="noopener" href="https://github.com/nishiguchi-michael/note-app-pug/tree/9ab57789d24cc42ad3f2e58e5ab51dd19716027e" target="_blank") github link
+            i(class="fab fa-github")
+
+        .template-item
+          .item-img
+            img(src="images/nyt.png" alt="screenshot of news app")
+          h2
+            a(class="title" rel="noopener" href="https://nyt.michael-nishiguchi.com/" target="_blank") news feed app
+          p this was a fun project where i used the new york times api to retrieve data. the application lets you search for articles and filter articles by topics you don't want to see.
+          a(class="link" rel="noopener" href="https://nyt.michael-nishiguchi.com" target="_blank") website link
+            i(class="fas fa-link")
+          a(class="git" rel="noopener" href="https://github.com/nishiguchi-michael/nyt/tree/112f5c3e0baa12cc2be3adabbc77b8f6469ae65a" target="_blank") github link
+            i(class="fab fa-github")
+
+
+
+        .template-item
+          .item-img
+              #premiere
+                iframe(title="zion trip youtube video" width="100%" height="100%" src="https://www.youtube.com/embed/VEohGJnFIXg?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen )
+          h2 zion trip | adobe premiere
+          p in the summer of 2020, I took a trip to zion national park with my wife. we filmed all the footage with an old gopro and i edited the footage with adobe premiere pro.
+
+
+
+
+
         //- .portfolio-item
         //-   a(href='http://michael-nishiguchi.codes/tic-tac-toe/')
         //-     img.custom-icon(src="images/icons-06.svg")
         //-   a(href='http://michael-nishiguchi.codes/tic-tac-toe/') Tic-Tac-Toe
         //-   p Here's a tic-tac-toe game that I made with the Twitter Bootstrap framework. It uses a minimax algorithm to make an unbeatable opponent.
-        .portfolio-item#adobe
-          .icons
-            a
-              img.custom-icon(src="images/cc.jfif")
-          a Adobe CC Projects
-          p Here is some work I have done in Adobe Illustrator and Photoshop. The first 5 are icons and the last image is an Under Armor ad that I recreated.
-        .portfolio-item.adobe-item.first-transition#zion
-          iframe( width="100%" height="100%" src="https://www.youtube.com/embed/VEohGJnFIXg?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen )
-        .portfolio-item.adobe-item.first-transition
-            img(src='images/headphones.png' alt='over ear headphones')
-        .portfolio-item.adobe-item.second-transition
-            img(src='images/speaker.png' alt='speaker')
-        .portfolio-item.adobe-item.second-transition
-            img(src='images/microphone.png' alt='stick microphone')
-        .portfolio-item.adobe-item.third-transition
-            img(src='images/old-microphone.png' alt='old school microphone')
-        .portfolio-item.adobe-item.third-transition
-            img(src='images/earbuds.png' alt='earbuds')
-        .portfolio-item.adobe-item.fourth-transition
-            img(src='images/climber.jpg' alt='woman climbing')
+
+
+
+        //- .portfolio-item#adobe
+        //-   .icons
+        //-     a
+        //-       img.custom-icon(src="images/cc.jfif")
+        //-   a Adobe CC Projects
+        //-   p Here is some work I have done in Adobe Illustrator and Photoshop. The first 5 are icons and the last image is an Under Armor ad that I recreated.
+        //- .portfolio-item.adobe-item.first-transition#zion
+        //-   iframe( width="100%" height="100%" src="https://www.youtube.com/embed/VEohGJnFIXg?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen )
+        //- .portfolio-item.adobe-item.first-transition
+        //-     img(src='images/headphones.png' alt='over ear headphones')
+        //- .portfolio-item.adobe-item.second-transition
+        //-     img(src='images/speaker.png' alt='speaker')
+        //- .portfolio-item.adobe-item.second-transition
+        //-     img(src='images/microphone.png' alt='stick microphone')
+        //- .portfolio-item.adobe-item.third-transition
+        //-     img(src='images/old-microphone.png' alt='old school microphone')
+        //- .portfolio-item.adobe-item.third-transition
+        //-     img(src='images/earbuds.png' alt='earbuds')
+        //- .portfolio-item.adobe-item.fourth-transition
+        //-     img(src='images/climber.jpg' alt='woman climbing')
     .container-full
       #contact
         form(action="/sendEmail" class="contact" method="post")
           h2 Shoot me a message at
-          p
+          h2
             a(href="mailto: mikenishiguchi@gmail.com") mikenishiguchi@gmail.com
+          h2 or here
           input(name="subject" class="emailSubject" type="text" placeholder="subject" required)
           textarea(type="text" name="message" rows="5" placeholder="Your message..." required)
           button.btn.btn-block(type='submit' class="blueBtn") Send
