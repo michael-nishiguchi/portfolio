@@ -31,27 +31,27 @@ h5 {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+#canv {
+  width: 100vw;
+  height: 100vh;
 }
 
 .welcome {
-  text-align: center;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-}
-.welcome canvas {
-  height: 100vh;
   width: 100vw;
-}
-.welcome .hundred {
+  height: 100vh;
   position: absolute;
-  top: 1%;
+  top: 0;
+  padding: 10px;
 }
 .welcome h1 {
-  font-size: calc(2rem + 5vw);
-  margin-bottom: 0;
+  font-size: calc(2rem + 3vw + 3vh);
+  margin: 0;
   position: relative;
   display: inline-block;
 }
@@ -68,9 +68,11 @@ html {
 .welcome h1,
 .welcome h2 {
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  word-wrap: break-word;
 }
 .welcome #logo {
   max-width: 500px;
+  width: calc(20vh + 20vw);
   margin: 0 auto;
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
 }
@@ -323,6 +325,7 @@ i.fa-arrow-down {
 
 #contact form a {
   color: var(--email);
+  word-wrap: break-word;
 }
 
 .contact input,
@@ -460,6 +463,12 @@ html.transition *:after {
   .transition-contact {
     margin-top: 0 !important;
     transition: margin-top 500ms;
+  }
+}
+@media (max-width: 450px) {
+  .template .template-item a {
+    display: block;
+    text-align: center;
   }
 }
 
